@@ -1,11 +1,11 @@
 {
   "origin": {
-    "address": "cjb.herokuapp.com",
+    "address": "fill-in-your-origin-address-here",
     "enable_sni": true
   },
   "alternate_origins": {
     "new_origin_name_here": {
-      "address": "cjb.herokuapp.com"
+      "address": "fill-in-another-origin-address-here"
     }
   }
 }
