@@ -9,10 +9,8 @@ cert=/etc/ssl/certs/ca-certificates.crt
 main() {
   setCluster
 
-  envsubst '$IMAGE_NAME' < ../k8s/deploy.yaml | kubectl apply -f -
+  envsubst '$IMAGE_NAME' < ../k8s/varnish/deployment.yaml > ../k8s/varnish/deployment.yaml
   kubectl apply -k ../k8s/base
-
-  kubectl rollout restart deployment node-express
 }
 
 setCluster() {
