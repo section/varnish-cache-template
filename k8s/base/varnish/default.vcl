@@ -13,7 +13,7 @@ sub vcl_init {
 }
 
 sub vcl_recv {
-    set req.backend_hint = d.backend("cjb.herokuapp.com");
+    set req.backend_hint = d.backend("nginx-service");
 }
 
 # Method: vcl_recv
@@ -22,7 +22,7 @@ sub vcl_recv {
 # Purpose: Typically you clean up the request here, removing cookies you don't need,
 # rewriting the request, etc.
 sub vcl_recv {
-    set req.http.Host = "www.cjb.io";
+    
 }
 
 # Method: vcl_backend_response
