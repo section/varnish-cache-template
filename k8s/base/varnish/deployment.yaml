@@ -59,8 +59,3 @@ spec:
       - name: vcl
         configMap:
           name: vcl
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: section-nats
