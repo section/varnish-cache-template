@@ -9,7 +9,7 @@ cert=/etc/ssl/certs/ca-certificates.crt
 main() {
   setCluster
 
-  envsubst '$IMAGE_NAME' < ../k8s/base/varnish/deployment.yaml > ../k8s/base/varnish/deployment.yaml
+  envsubst '$IMAGE_NAME' < ../k8s/base/varnish/deployment-template.yaml > ../k8s/base/varnish/deployment.yaml
   kubectl apply -k ../k8s/base
 }
 
@@ -21,15 +21,15 @@ setCluster() {
     cert=/usr/local/etc/ca-certificates/cert.pem
   fi
 
-  kubectl config set-cluster section \
+  kubectl config set-cluster section-varnish \
   --server=$SECTION_K8S_API_URL \
   --certificate-authority=$cert
 
   kubectl config set-credentials section-user --token=$SECTION_API_TOKEN
 
-  kubectl config set-context my-section-application --cluster=section --user=section-user --namespace=default
+  kubectl config set-context my-varnish-app --cluster=section-varnish --user=section-user --namespace=default
 
-  kubectl config use-context my-section-application
+  kubectl config use-context my-varnish-app
 
   kubectl version
 }

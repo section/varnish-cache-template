@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: varnishd
-        image: ghcr.io/:main
+        image: ghcr.io/${IMAGE_NAME}:main
         imagePullPolicy: Always
         args:
         - -p
