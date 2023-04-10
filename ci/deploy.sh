@@ -10,7 +10,7 @@ main() {
   setCluster
 
   envsubst '$IMAGE_NAME' < ../k8s/deploy.yaml | kubectl apply -f -
-  kubectl apply -f ../k8s/ingress-upstream.yaml
+  kubectl apply -k ../k8s/base
 
   kubectl rollout restart deployment node-express
 }

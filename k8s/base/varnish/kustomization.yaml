@@ -1,0 +1,10 @@
+resources:
+- deployment.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: vcl
+  files:
+  - default.vcl
