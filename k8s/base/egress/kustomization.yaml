@@ -1,8 +1,3 @@
 resources:
-- egress-deployment.yaml
-- egress-service.yaml
-
-configMapGenerator:
-- name: egress-config
-  files:
-  - egress.json
+- deployment.yaml
+- service.yaml

@@ -9,7 +9,7 @@ cert=/etc/ssl/certs/ca-certificates.crt
 main() {
   setCluster
 
-  envsubst '$IMAGE_NAME' < ../k8s/base/varnish/deployment-template.yaml > ../k8s/base/varnish/deployment.yaml
+  envsubst '$IMAGE_NAME' < ../k8s/base/egress/deployment-template.yaml > ../k8s/base/egress/deployment.yaml
   kubectl apply -k ../k8s/base
 }
 

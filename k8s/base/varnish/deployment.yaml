@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: varnishd
-        image: ghcr.io/:main
+        image: sectionio/varnish-cache-kei:latest
         imagePullPolicy: Always
         args:
         - -p

@@ -13,7 +13,7 @@ sub vcl_init {
 }
 
 sub vcl_recv {
-    set req.backend_hint = d.backend("nginx-service");
+    set req.backend_hint = d.backend("egress-router");
 }
 
 # Method: vcl_recv

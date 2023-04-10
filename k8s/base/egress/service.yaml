@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: egress-service
+  name: egress-router
 spec:
   selector:
-    app: egress
+    app: egress-router
   ports:
     - protocol: TCP
       port: 80
