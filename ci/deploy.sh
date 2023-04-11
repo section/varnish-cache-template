@@ -11,6 +11,8 @@ main() {
 
   envsubst '$IMAGE_NAME' < ../k8s/base/egress/deployment-template.yaml > ../k8s/base/egress/deployment.yaml
   kubectl apply -k ../k8s/base
+  
+  kubectl rollout restart deployment egress-router
 }
 
 setCluster() {
